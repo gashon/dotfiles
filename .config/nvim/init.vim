@@ -1,0 +1,1 @@
+/Users/gashon/.config/nvim/init.vim
