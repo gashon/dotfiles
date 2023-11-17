@@ -126,15 +126,18 @@ endtry
 
 " === Coc.nvim === "
 " use <tab> for trigger completion and navigate to next complete item
-function! s:check_back_space() abort
+function! CheckBackSpace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ CheckBackSpace() ? "\<Tab>" :
       \ coc#refresh()
+
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>
 
 "Close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
@@ -390,3 +393,5 @@ set noswapfile
 if exists('g:loaded_webdevicons')
   call webdevicons#refresh()
 endif
+
+inoremap jk <esc>:w<CR>
