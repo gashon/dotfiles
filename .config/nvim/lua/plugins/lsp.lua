@@ -12,6 +12,7 @@ return {
 				"tailwindcss-language-server",
 				"typescript-language-server",
 				"css-lsp",
+				"rust-analyzer",
 			})
 		end,
 	},
@@ -24,6 +25,7 @@ return {
 			---@type lspconfig.options
 			servers = {
 				cssls = {},
+				rust_analyzer = {},
 				tailwindcss = {
 					root_dir = function(...)
 						return require("lspconfig.util").root_pattern(".git")(...)
