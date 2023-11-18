@@ -16,7 +16,6 @@ date
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$HOME/flutter/bin
 export PATH=$PATH:/usr/local/opt/mongodb-community@6.0/bin
 export PATH=$PATH:/usr/local/texlive/2022basic/bin/universal-darwin
 
@@ -30,7 +29,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_THEME="af-magic"
 # ZSH_THEME="jonathan"
 
@@ -128,12 +127,7 @@ source $ZSH/oh-my-zsh.sh
 export PNPM_HOME="/Users/gashon/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm endsource ~/powerlevel10k/powerlevel10k.zsh-theme
-# source ~/powerlevel10k/powerlevel10k.zsh-theme
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# named directories
 hash -d ghub="/Users/gashon/Documents/GitHub"
 hash -d ssh="/Users/gashon/.ssh"
 hash -d zshconfig="/Users/gashon/.zshrc"
