@@ -12,11 +12,11 @@ local M = {
 		},
 		integrations = {
 			mason = true,
-			neotree = true,
+			neotree = false,
 			neotest = true,
 			which_key = true,
 			neogit = false,
-			nvimtree = false,
+			nvimtree = true,
 			rainbow_delimiters = false,
 			dap = { enabled = true, enable_ui = true },
 			telescope = { enabled = true, style = nil },

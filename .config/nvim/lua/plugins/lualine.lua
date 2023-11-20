@@ -5,8 +5,9 @@ return {
 		opts = {
 			options = {
 				-- globalstatus = false,
-				theme = "wombat",
+				theme = "gruvbox_dark",
 			},
 		},
+		enabled = true,
 	},
 }
