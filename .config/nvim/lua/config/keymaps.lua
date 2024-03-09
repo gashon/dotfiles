@@ -20,3 +20,12 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 
 -- buffer management
 keymap.set("n", "<leader>bd", ":bn<CR>:sleep 10m<CR>:bd#<CR>", { desc = "Close current buffer and move to next" })
+
+-- Use TAB for selecting autosuggestions in insert mode
+keymap.set("i", "<Tab>", function()
+	if vim.fn.pumvisible() == 1 then
+		return "<C-n>"
+	else
+		return "<Tab>"
+	end
+end, { expr = true, noremap = true })

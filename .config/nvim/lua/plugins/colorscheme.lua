@@ -4,8 +4,11 @@ local M = {
 	lazy = false,
 	priority = 1000,
 	opts = {
-		flavour = "macchiato",
+		flavour = "mocha",
 		transparent_background = true,
+    color_overrides = {
+      -- mocha = {text = "#ffffff"}
+    },
 		styles = {
 			keywords = { "bold" },
 			functions = { "italic" },
