@@ -54,10 +54,10 @@ return {
             action = "Telescope live_grep ",
           },
           {
-            desc = "  New file",
-            group = "Macro",
-            key = "n",
-            action = "NvimTreeToggle",
+            desc = "Lazy",
+            group = "DiagnosticHint",
+            key = "l",
+            action = "Lazy",
           },
           {
             desc = "  Config",
@@ -65,17 +65,18 @@ return {
             key = "c",
             action = "e $MYVIMRC ",
           },
-          {
-            desc = "  Quit",
-            group = "Number",
-            key = "q",
-            action = "qa",
-          },
+
           {
             desc = " Recent files",
             group = "",
             key = "r",
             action = "Telescope oldfiles ",
+          },
+          {
+            desc = "  Quit",
+            group = "Number",
+            key = "q",
+            action = "qa",
           },
           -- {
           --     desc = "󰊳 Update",
