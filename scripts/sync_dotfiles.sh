@@ -1,3 +1,4 @@
+!#/bin/bash
 # sync_dotfiles.sh 
 # sync dotfiles to git dir
 
