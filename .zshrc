@@ -1,7 +1,11 @@
 # Powerlevel10k instant prompt. 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # disable ctrl-s and ctrl-q in terminal
 stty -ixon
@@ -23,7 +27,6 @@ bindkey -v
 
 autoload -Uz compinit
 compinit
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 hash -d ghub="$HOME/Github"
 hash -d ssh="$HOME/.ssh"
@@ -51,4 +54,3 @@ antigen bundle zsh-users/zsh-autosuggestions > /dev/null
 antigen bundle ael-code/zsh-colored-man-pages > /dev/null
 antigen apply
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
