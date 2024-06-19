@@ -14,4 +14,3 @@ for dir in ${dirs[@]}; do
    rsync -av --delete --progress $HOME/$dir $(pwd)/$target_dir
 done
 
-# rsync -av --delete --progress ${dirs[@]} $target_dir
