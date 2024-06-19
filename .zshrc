@@ -25,6 +25,9 @@ setopt autocd notify
 # use vim keybindings
 bindkey -v
 
+export EDITOR=vim
+export VISUAL=vim
+
 autoload -Uz compinit
 compinit
 
@@ -33,6 +36,7 @@ hash -d ssh="$HOME/.ssh"
 hash -d config="$HOME/.config"s
 
 alias xclip="xclip -sel clip"
+alias less="less -R -N"
 
 # antigen plugins
 if ! [[ -f ~/.antigen/antigen.zsh ]]; then
