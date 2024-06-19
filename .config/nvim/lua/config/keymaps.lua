@@ -23,3 +23,16 @@ keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file e
 keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file
 keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" }) -- collapse file explorer
 keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" }) -- refresh file explorer
+
+-- lsp (mason)
+-- Buffer local mappings.
+-- See `:help vim.lsp.*` for documentation on any of the below functions
+local opts = { buffer = 0, silent = true }
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+-- vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+vim.keymap.set("n", "<C-k>", vim.lsp.buf.type_definition, opts)
+vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
+vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)

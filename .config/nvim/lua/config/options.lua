@@ -27,3 +27,8 @@ vim.opt.splitright = true -- split windows above
 vim.opt.splitkeep = "cursor"
 
 vim.opt.mouse = "a" -- enable mouse in all modes
+
+vim.opt.clipboard = "unnamedplus" -- copy/paste to system clipboard
+
+vim.g.nvim_tree_lsp_diagnostics = 1 -- show lsp diagnostics in nvim-tree
+vim.g.nvim_tree_git_hl = 1 -- show git status in nvim-tree

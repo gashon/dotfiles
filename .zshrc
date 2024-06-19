@@ -22,9 +22,6 @@ setopt INC_APPEND_HISTORY # Write to history file immediately, not when shell ex
 # auto cd if path isn't present + notify on job status changes
 setopt autocd notify
 
-# use vim keybindings
-bindkey -v
-
 export EDITOR=vim
 export VISUAL=vim
 
@@ -58,3 +55,5 @@ antigen bundle zsh-users/zsh-autosuggestions > /dev/null
 antigen bundle ael-code/zsh-colored-man-pages > /dev/null
 antigen apply
 
+
+bindkey -v
