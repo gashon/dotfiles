@@ -8,7 +8,7 @@ if [ $(basename $(pwd)) != "dotfiles" ]; then
 fi
 
 target_dir=$(pwd)
-dirs=(.psqlrc .vimrc .config/kitty .config/nvim .zshrc )
+dirs=(.psqlrc .vimrc .config/kitty .config/nvim .zshrc .condarc)
 
 for dir in ${dirs[@]}; do
    target_dir=$(dirname $dir)

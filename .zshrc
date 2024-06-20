@@ -55,5 +55,9 @@ antigen bundle zsh-users/zsh-autosuggestions > /dev/null
 antigen bundle ael-code/zsh-colored-man-pages > /dev/null
 antigen apply
 
+# initialize conda
+if [[ -f /opt/miniforge3/bin/conda ]]; then
+	eval "$(/opt/miniforge3/bin/conda shell.zsh hook)"
+fi
 
 bindkey -v
