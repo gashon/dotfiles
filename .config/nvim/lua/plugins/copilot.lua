@@ -1,3 +1,3 @@
 return {
-	{ "github/copilot.vim", enabled = "true" },
+  { "github/copilot.vim", event = "BufRead", enabled = "true" },
 }

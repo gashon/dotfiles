@@ -1,5 +1,6 @@
 return {
   "nvim-tree/nvim-tree.lua",
+  events = "BufWinEnter",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   opts = {
     hijack_cursor = true,

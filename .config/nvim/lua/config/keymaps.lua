@@ -36,3 +36,7 @@ vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 vim.keymap.set("n", "<C-k>", vim.lsp.buf.type_definition, opts)
 vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
 vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+
+-- Noice
+-- add kepmap to dismiss the noice popup
+vim.api.nvim_set_keymap("n", "<C-d>", "<cmd>Noice dismiss<cr>", { noremap = true, silent = true })

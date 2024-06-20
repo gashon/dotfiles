@@ -1,5 +1,4 @@
 return {
-
   "folke/noice.nvim",
   event = "VeryLazy",
   dependencies = {
@@ -10,4 +9,28 @@ return {
     --   If not available, we use `mini` as the fallback
     "rcarriga/nvim-notify",
   },
+  opts = {
+    background_colour = "#000000",
+    cmdline = {
+      enabled = true,
+      view = "cmdline_popup",
+    },
+    message = { enabled = true, view = "notify" },
+    popupmenu = {
+      enabled = true,
+      backend = "nui",
+    },
+  },
+  config = function(_, opts)
+    require("noice").setup(opts)
+
+    require("notify").setup({
+      stages = "slide",
+      render = "minimal",
+
+      background_colour = "#1E1E1E", -- Darker background
+    })
+
+    -- dismiss keymap is in config.keymaps
+  end,
 }
