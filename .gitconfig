@@ -1,6 +1,7 @@
 [user]
 	name = gashon
 	email = gashon96@gmail.com
+	signingkey = EEE67F1C0D8C9AB1
 
 [core]
     editor = vim
@@ -28,8 +29,8 @@
     status = auto
 
 [commit]
-	gpgSign = true
-	signingkey = EEE67F1C0D8C9AB1
+    gpgSign = true
+    signingkey = EEE67F1C0D8C9AB1
 
 [mergetool "vimdiff"]
     cmd = vimdiff "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
