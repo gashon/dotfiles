@@ -26,11 +26,11 @@
     ui = auto
     branch = auto
     diff = auto
-    status = auto
+	status = auto
 
-[commit]
-    gpgSign = true
-    signingkey = EEE67F1C0D8C9AB1
+# configure gpgSigning and key for signing commits
+[include]
+    path = ~/.gitconfig_local
 
 [mergetool "vimdiff"]
     cmd = vimdiff "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
