@@ -1,0 +1,52 @@
+[user]
+	name = gashon
+	email = gashon96@gmail.com
+
+[core]
+    editor = vim
+
+[push]
+    default = simple
+
+[fetch]
+    prune = false
+
+[diff]
+    tool = vimdiff 
+
+[merge]
+    tool = vimdiff  
+    ff = only
+
+[rerere]
+    enabled = true
+
+[color]
+    ui = auto
+    branch = auto
+    diff = auto
+    status = auto
+
+[commit]
+    gpgSign = true
+
+[mergetool "vimdiff"]
+    cmd = vimdiff "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+    trustExitCode = true
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = zebra
+    syntax-theme = Monokai
+
+[http]
+    sslVerify = true
+
+[init]
+    defaultBranch = main
+
+[core]
+    excludesfile = ~/.gitignore_global  
+
