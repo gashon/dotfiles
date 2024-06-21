@@ -47,6 +47,6 @@
 [init]
     defaultBranch = main
 
-[core]
+[core]# Global .gitignore file
     excludesfile = ~/.gitignore_global  
 
