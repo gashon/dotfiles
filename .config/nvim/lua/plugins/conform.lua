@@ -32,6 +32,7 @@ return {
       lua = { "stylua" },
       python = { { "isort", "black" } },
       javascript = { "prettier" },
+      sh = { "shfmt" },
     },
     -- Customize formatters
     formatters = {

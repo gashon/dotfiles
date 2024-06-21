@@ -12,6 +12,18 @@ stty -ixon
 
 fastfetch
 
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+
+if command -v go &> /dev/null; then
+	go_bin="$(go env GOPATH)/bin"
+    pathadd "$go_bin"
+fi
+
+
 # manage history file size
 HISTFILE=~/.histfile
 HISTSIZE=10_000_000

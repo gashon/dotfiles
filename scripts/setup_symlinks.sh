@@ -3,8 +3,8 @@
 # This script symlinks all dotfiles to the home directory
 
 if [ "$(basename "$(pwd)")" != "dotfiles" ]; then
-    echo "Please run this script in dotfiles directory"
-    exit 1
+  echo "Please run this script in dotfiles directory"
+  exit 1
 fi
 
 home_dots=$(find . -name ".*" -type f -not -name ".git" -maxdepth 1)
@@ -12,11 +12,13 @@ home_dots=$(find . -name ".*" -type f -not -name ".git" -maxdepth 1)
 config_dots=$(find .config -maxdepth 1 -mindepth 1)
 
 for f in $home_dots; do
-    ln -s "$f" ~/"$f"
+  echo "symlinking $(pwd)/$f to ~/$f"
+  ln -s "$(pwd)/$f" ~/"$f"
 done
 
 for d in $config_dots; do
-	dir_name=$(basename "$d")
-    ln -s "$d" ~/.config/"$dir_name"
-done
+  dir_name=$(basename "$d")
 
+  echo "symlinking $(pwd)/$d to ~/.config/$dir_name"
+  ln -s "$(pwd)/$d" ~/.config/"$dir_name"
+done
