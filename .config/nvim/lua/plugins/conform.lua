@@ -14,12 +14,15 @@ return {
     },
   },
   opts = {
-    -- used in config.commands
+    notify_on_error = true,
+    -- blocking format on save, todo use format_after_save for async
     format_on_save = function(bufnr)
       -- Disable with a global or buffer-local variable
+      -- Used in config.commands
       if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
         return
       end
+
       return {
         timeout_ms = 500,
         lsp_fallback = true,
@@ -30,19 +33,18 @@ return {
     -- Define formatters
     formatters_by_ft = {
       lua = { "stylua" },
+      rust = { "rustfmt" },
+      go = { "goimports", "gofmt" },
       python = { { "isort", "black" } },
       javascript = { "prettier" },
       sh = { "shfmt" },
+      zsh = { "shfmt" },
     },
     -- Customize formatters
-    formatters = {
-      shfmt = {
-        prepend_args = { "-i", "2" },
-      },
-    },
+    formatters = {},
   },
-  init = function()
-    -- If you want the formatexpr, here is the place to set it
-    vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+  config = function(_, opts)
+    local conform = require("conform")
+    conform.setup(opts)
   end,
 }
