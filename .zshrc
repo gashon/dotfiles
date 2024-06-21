@@ -61,3 +61,6 @@ if [[ -f /opt/miniforge3/bin/conda ]]; then
 fi
 
 bindkey -v
+
+[ -z "$TMUX" ] && tmux attach || tmux new-session
+
