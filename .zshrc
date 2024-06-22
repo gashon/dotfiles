@@ -42,10 +42,6 @@ export VISUAL="nvim"
 
 bindkey -v
 
-if ! command -v fzf &>/dev/null; then
-	source <(fzf --zsh)
-fi
-
 autoload -Uz compinit
 compinit
 
@@ -79,4 +75,8 @@ antigen apply
 # initialize conda
 if [[ -f /opt/miniforge3/bin/conda ]]; then
 	eval "$(/opt/miniforge3/bin/conda shell.zsh hook)"
+fi
+
+if command -v fzf &>/dev/null; then
+	source <(fzf --zsh)
 fi
