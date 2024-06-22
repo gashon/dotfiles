@@ -1,7 +1,6 @@
 [user]
 	name = gashon
 	email = gashon96@gmail.com
-	signingkey = EEE67F1C0D8C9AB1
 
 [core]
     editor = vim
