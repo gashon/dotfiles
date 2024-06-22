@@ -3,6 +3,8 @@
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
 
+[ -z "$TMUX" ] && tmux attach || tmux new-session
+
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
@@ -24,17 +26,23 @@ if command -v go &>/dev/null; then
 fi
 
 # manage history file size
-HISTFILE=~/.histfile
-HISTSIZE=10_000_000
-SAVEHIST=100_000
+HISTFILE=~/.zsh_history
+HISTSIZE=1_000_000
+SAVEHIST=1_000_000
 setopt EXTENDED_HISTORY   # Write to hist file in format ":start:elapsed;command"
 setopt INC_APPEND_HISTORY # Write to history file immediately, not when shell exists
 
 # auto cd if path isn't present + notify on job status changes
 setopt autocd notify
 
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+bindkey -v
+
+if ! command -v fzf &>/dev/null; then
+	source <(fzf --zsh)
+fi
 
 autoload -Uz compinit
 compinit
@@ -70,7 +78,3 @@ antigen apply
 if [[ -f /opt/miniforge3/bin/conda ]]; then
 	eval "$(/opt/miniforge3/bin/conda shell.zsh hook)"
 fi
-
-bindkey -v
-
-[ -z "$TMUX" ] && tmux attach || tmux new-session
