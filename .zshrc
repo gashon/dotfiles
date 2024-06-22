@@ -25,10 +25,12 @@ if command -v go &>/dev/null; then
 	pathadd "$go_bin"
 fi
 
-# manage history file size
 HISTFILE=~/.zsh_history
-HISTSIZE=1_000_000
-SAVEHIST=1_000_000
+
+# avg cmd hist line length is 30, 1_500_000 * 30 = 45MB
+HISTSIZE=1_500_000
+SAVEHIST=1_500_000
+
 setopt EXTENDED_HISTORY   # Write to hist file in format ":start:elapsed;command"
 setopt INC_APPEND_HISTORY # Write to history file immediately, not when shell exists
 
