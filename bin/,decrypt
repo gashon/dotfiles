@@ -1,0 +1,8 @@
+!#/bin/bash
+
+set -e 
+
+file=$1
+
+gpg --decrypt -r 105C0EA283243616693BB63E7D6F10FE98464D3F $file
+
