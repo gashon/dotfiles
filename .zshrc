@@ -26,6 +26,7 @@ if command -v go &>/dev/null; then
 fi
 
 pathadd "$HOME/.local/bin"
+pathadd "$HOME/.crypto/bin"
 
 HISTFILE=~/.zsh_history
 
