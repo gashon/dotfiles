@@ -12,7 +12,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # disable ctrl-s and ctrl-q in terminal
 stty -ixon
 
-fastfetch
+command -v fastfetch &>/dev/null && fastfetch
 
 pathadd() {
 	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
@@ -20,13 +20,9 @@ pathadd() {
 	fi
 }
 
-if command -v go &>/dev/null; then
-	go_bin="$(go env GOPATH)/bin"
-	pathadd "$go_bin"
-fi
-
 pathadd "$HOME/.local/bin"
 pathadd "$HOME/.crypto/bin"
+command -v go &>/dev/null && pathadd "$(go env GOPATH)/bin"
 
 HISTFILE=~/.zsh_history
 
@@ -43,15 +39,18 @@ setopt autocd notify
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+# enable vi mode
 bindkey -v
 
 autoload -Uz compinit
 compinit
 
+# named directories
 hash -d ghub="$HOME/Github"
 hash -d ssh="$HOME/.ssh"
 hash -d config="$HOME/.config"s
 
+# aliases
 alias xclip="xclip -sel clip"
 alias less="less -R -N"
 
@@ -80,6 +79,5 @@ if [[ -f /opt/miniforge3/bin/conda ]]; then
 	eval "$(/opt/miniforge3/bin/conda shell.zsh hook)"
 fi
 
-if command -v fzf &>/dev/null; then
-	source <(fzf --zsh)
-fi
+# fzf history search
+command -v fzf &>/dev/null && source <(fzf --zsh)
