@@ -2,7 +2,10 @@
 
 set -e 
 
+key_id=105C0EA283243616693BB63E7D6F10FE98464D3F
 file=$1
 
-gpg --decrypt -r 105C0EA283243616693BB63E7D6F10FE98464D3F $file
+echo -e "\nkey_id: $key_id\ntarget: $file\n"
+
+gpg --decrypt -r $key_id $file
 
