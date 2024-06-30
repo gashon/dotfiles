@@ -13,10 +13,10 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 
 -- telescope
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader><leader>", builtin.find_files, { desc = "Open telescope find files modal" })
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Open ripgrep modal" })
-vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "View all telescope buffers" })
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+keymap.set("n", "<leader><leader>", builtin.find_files, { desc = "Open telescope find files modal" })
+keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Open ripgrep modal" })
+keymap.set("n", "<leader>fb", builtin.buffers, { desc = "View all telescope buffers" })
+keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 
 -- nvim tree
 keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
@@ -28,15 +28,18 @@ keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file
 -- Buffer local mappings.
 -- See `:help vim.lsp.*` for documentation on any of the below functions
 local opts = { buffer = 0, silent = true }
-vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+keymap.set("n", "K", vim.lsp.buf.hover, opts)
+keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 -- vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-vim.keymap.set("n", "<C-k>", vim.lsp.buf.type_definition, opts)
-vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
-vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+keymap.set("n", "<C-k>", vim.lsp.buf.type_definition, opts)
+keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
+keymap.set("n", "gr", vim.lsp.buf.references, opts)
 
 -- Noice
 -- add kepmap to dismiss the noice popup
-vim.api.nvim_set_keymap("n", "<C-d>", "<cmd>Noice dismiss<cr>", { noremap = true, silent = true })
+keymap.set("n", "<C-d>", "<cmd>Noice dismiss<cr>", { noremap = true, silent = true })
+
+--UndoTree
+keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>", { noremap = true, silent = true })
