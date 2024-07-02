@@ -1,6 +1,9 @@
 return {
   "nvim-tree/nvim-tree.lua",
   events = "BufWinEnter",
+  -- Nvim v 1.2.0: https://github.com/nvim-tree/nvim-tree.lua/releases
+  -- 1.2.0 is the last version with stable sshfs support: https://github.com/nvim-tree/nvim-tree.lua/issues/2794
+  commit = "85c502e",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   opts = {
     hijack_cursor = true,
