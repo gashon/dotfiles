@@ -27,15 +27,15 @@ keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file
 -- lsp (mason)
 -- Buffer local mappings.
 -- See `:help vim.lsp.*` for documentation on any of the below functions
-local opts = { buffer = 1, silent = true }
-keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-keymap.set("n", "K", vim.lsp.buf.hover, opts)
-keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
--- vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-keymap.set("n", "<C-k>", vim.lsp.buf.type_definition, opts)
-keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
-keymap.set("n", "gr", vim.lsp.buf.references, opts)
+-- local opts = { buffer = 1, silent = true }
+-- keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+-- keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+-- keymap.set("n", "K", vim.lsp.buf.hover, opts)
+-- keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+-- -- vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+-- keymap.set("n", "<C-k>", vim.lsp.buf.type_definition, opts)
+-- keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
+-- keymap.set("n", "gr", vim.lsp.buf.references, opts)
 
 -- Noice
 -- add kepmap to dismiss the noice popup
@@ -57,3 +57,7 @@ vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
 
 vim.keymap.set({ "n", "x", "o" }, "]h", next_hunk_repeat)
 vim.keymap.set({ "n", "x", "o" }, "[h", prev_hunk_repeat)
+
+-- figtree
+vim.keymap.set('n', '<Leader>f', function() require('figtree').toggle() end)
+
