@@ -197,19 +197,6 @@ return {
       vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
       vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
 
-      -- vim way: ; goes to the direction you were moving.
-      -- vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move)
-      -- vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_opposite)
-
-      -- This repeats the last query with always previous direction and to the start of the range.
-      -- vim.keymap.set({ "n", "x", "o" }, "<home>", function()
-      --   ts_repeat_move.repeat_last_move({forward = false, start = true})
-      -- end)
-
-      -- This repeats the last query with always next direction and to the end of the range.
-      -- vim.keymap.set({ "n", "x", "o" }, "<end>", function()
-      --   ts_repeat_move.repeat_last_move({forward = true, start = false})
-      -- end)
       require("nvim-treesitter.configs").setup(opts)
     end,
   },

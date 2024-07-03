@@ -27,7 +27,7 @@ keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file
 -- lsp (mason)
 -- Buffer local mappings.
 -- See `:help vim.lsp.*` for documentation on any of the below functions
-local opts = { buffer = 0, silent = true }
+local opts = { buffer = 1, silent = true }
 keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -43,3 +43,17 @@ keymap.set("n", "<C-d>", "<cmd>Noice dismiss<cr>", { noremap = true, silent = tr
 
 --UndoTree
 keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>", { noremap = true, silent = true })
+
+-- Treesitter
+-- Support ; adn , to repeat the last movement (with gitsigns hunks too)
+local gs = require("gitsigns")
+local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
+
+local next_hunk_repeat, prev_hunk_repeat = ts_repeat_move.make_repeatable_move_pair(gs.next_hunk, gs.prev_hunk)
+-- Repeat movement with ; and ,
+-- ensure ; goes forward and , goes backward regardless of the last direction
+vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
+vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
+
+vim.keymap.set({ "n", "x", "o" }, "]h", next_hunk_repeat)
+vim.keymap.set({ "n", "x", "o" }, "[h", prev_hunk_repeat)
