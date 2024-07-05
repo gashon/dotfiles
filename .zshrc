@@ -24,6 +24,9 @@ pathadd "$HOME/.local/bin"
 pathadd "$HOME/.crypto/bin"
 command -v go &>/dev/null && pathadd "$(go env GOPATH)/bin"
 
+setopt NO_BG_NICE # don't lower priority of background jobs
+setopt NO_LIST_BEEP # don't beep on tab completion
+
 HISTFILE=~/.zsh_history
 
 # avg cmd hist line length is 30, 1_500_000 * 30 = 45MB
