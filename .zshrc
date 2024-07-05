@@ -45,9 +45,6 @@ setopt autocd notify
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-# enable vi mode
-bindkey -v
-
 autoload -Uz compinit
 compinit
 
@@ -87,3 +84,6 @@ fi
 
 # fzf history search
 command -v fzf &>/dev/null && source <(fzf --zsh)
+
+# enable vi mode
+bindkey -v

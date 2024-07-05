@@ -7,7 +7,7 @@ if [ "$(basename "$(pwd)")" != "dotfiles" ]; then
 	exit 1
 fi
 
-home_dots=$(find . -name ".*" -type f -not -name ".git" -maxdepth 1)
+home_dots=$(find . -name ".*" -type f -maxdepth 1)
 
 config_dots=$(find .config -maxdepth 1 -mindepth 1)
 
