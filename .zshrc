@@ -32,6 +32,9 @@ SAVEHIST=1_500_000
 
 setopt EXTENDED_HISTORY   # Write to hist file in format ":start:elapsed;command"
 setopt INC_APPEND_HISTORY # Write to history file immediately, not when shell exists
+setopt HIST_REDUCE_BLANKS  # Remove leading/trailing blanks from each hist line
+setopt SHARE_HISTORY       # Share history between all sessions
+setopt APPEND_HISTORY      # Append history to the history file (no overwriting)
 
 # auto cd if path isn't present + notify on job status changes
 setopt autocd notify
