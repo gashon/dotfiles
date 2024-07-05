@@ -4,7 +4,6 @@ return {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.6",
     dependencies = { "nvim-lua/plenary.nvim" },
-
     opts = {
       defaults = {
         wrap_results = true,
@@ -22,6 +21,27 @@ return {
           initial_mode = "normal",
           layout_config = {
             preview_cutoff = 9999,
+          },
+        },
+        find_files = {
+          find_command = {
+            "rg",
+            "--files",
+            "--hidden",
+            "--glob",
+            "!**/.git/*",
+            "--glob",
+            "!**/.idea/*",
+            "--glob",
+            "!**/.vscode/*",
+            "--glob",
+            "!**/build/*",
+            "--glob",
+            "!**/dist/*",
+            "--glob",
+            "!**/yarn.lock",
+            "--glob",
+            "!**/package-lock.json",
           },
         },
       },
