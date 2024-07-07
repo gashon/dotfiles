@@ -48,4 +48,3 @@ return {
     conform.setup(opts)
   end,
 }
-
