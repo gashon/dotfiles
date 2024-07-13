@@ -81,8 +81,11 @@ return {
         },
       },
     },
-    filters = {},
+    filters = {
+      dotfiles = false,
+    },
     git = {
+      ignore = false,
       show_on_dirs = true,
       show_on_open_dirs = true,
     },
