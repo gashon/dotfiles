@@ -24,4 +24,4 @@ for d in $config_dots; do
 done
 
 echo "symlinking $(pwd)/bin to ~/.local/bin"
-ln -s "$(pwd)/bin" ~/.local/bin
+ln -s "$(pwd)" ~/.local/bin
