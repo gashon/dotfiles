@@ -1,6 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
-	  event = "BufReadPre",
+  event = "BufReadPre",
   dependencies = {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -13,6 +13,8 @@ return {
       "pyright",
       "tsserver",
       "clangd",
+      "gopls",
+      "lua_ls",
     },
     automatic_installation = true,
   },
@@ -25,12 +27,8 @@ return {
     lspconfig.rust_analyzer.setup({})
     lspconfig.pyright.setup({})
     lspconfig.tsserver.setup({})
-    lspconfig.clangd.setup({
-      cmd = {
-        "clangd",
-        "--offset-encoding=utf-16",
-        "--pretty",
-      },
-    })
+    lspconfig.gopls.setup({})
+    lspconfig.clangd.setup({})
+    lspconfig.lua_ls.setup({})
   end,
 }
