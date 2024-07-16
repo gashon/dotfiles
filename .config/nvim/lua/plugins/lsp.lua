@@ -15,7 +15,6 @@ return {
       "clangd",
       "gopls",
       "lua_ls",
-      "sqlls",
     },
     automatic_installation = true,
   },
@@ -31,6 +30,5 @@ return {
     lspconfig.gopls.setup({})
     lspconfig.clangd.setup({})
     lspconfig.lua_ls.setup({})
-    lspconfig.sqlls.setup({})
   end,
 }
