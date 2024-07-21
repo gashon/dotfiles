@@ -24,7 +24,7 @@ pathadd "$HOME/.local/bin"
 pathadd "$HOME/.crypto/bin"
 command -v go &>/dev/null && pathadd "$(go env GOPATH)/bin"
 
-setopt NO_BG_NICE # don't lower priority of background jobs
+setopt NO_BG_NICE   # don't lower priority of background jobs
 setopt NO_LIST_BEEP # don't beep on tab completion
 
 HISTFILE=~/.zsh_history
@@ -35,9 +35,9 @@ SAVEHIST=1_500_000
 
 setopt EXTENDED_HISTORY   # Write to hist file in format ":start:elapsed;command"
 setopt INC_APPEND_HISTORY # Write to history file immediately, not when shell exists
-setopt HIST_REDUCE_BLANKS  # Remove leading/trailing blanks from each hist line
-setopt SHARE_HISTORY       # Share history between all sessions
-setopt APPEND_HISTORY      # Append history to the history file (no overwriting)
+setopt HIST_REDUCE_BLANKS # Remove leading/trailing blanks from each hist line
+setopt SHARE_HISTORY      # Share history between all sessions
+setopt APPEND_HISTORY     # Append history to the history file (no overwriting)
 
 # auto cd if path isn't present + notify on job status changes
 setopt autocd notify
@@ -56,6 +56,7 @@ hash -d config="$HOME/.config"s
 # aliases
 alias xclip="xclip -sel clip"
 alias less="less -R -N"
+alias open="nautilus"
 
 # antigen plugins
 if ! [[ -f ~/.antigen/antigen.zsh ]]; then
