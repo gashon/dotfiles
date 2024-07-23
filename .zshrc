@@ -82,6 +82,11 @@ fi
 # fzf history search
 command -v fzf &>/dev/null && source <(fzf --zsh)
 
+# zoxide
+if command -v zoxide &>/dev/null; then
+	eval "$(zoxide init zsh)"
+fi
+
 # enable vi mode
 bindkey -v
 
@@ -91,5 +96,3 @@ alias less="less -R -N"
 alias open="nautilus"
 alias ls="eza"
 alias l="eza -laah"
-
-. "$HOME/.cargo/env"
