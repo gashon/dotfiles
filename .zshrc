@@ -57,6 +57,7 @@ hash -d config="$HOME/.config"s
 alias xclip="xclip -sel clip"
 alias less="less -R -N"
 alias open="nautilus"
+alias ls="eza"
 
 # antigen plugins
 if ! [[ -f ~/.antigen/antigen.zsh ]]; then
