@@ -58,6 +58,7 @@ alias xclip="xclip -sel clip"
 alias less="less -R -N"
 alias open="nautilus"
 alias ls="eza"
+alias l="eza -lah"
 
 # antigen plugins
 if ! [[ -f ~/.antigen/antigen.zsh ]]; then
