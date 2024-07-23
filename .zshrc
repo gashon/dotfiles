@@ -23,6 +23,7 @@ pathadd() {
 pathadd "$HOME/.local/bin"
 pathadd "$HOME/.crypto/bin"
 command -v go &>/dev/null && pathadd "$(go env GOPATH)/bin"
+command -v rustup &>/dev/null && pathadd "$HOME/.cargo/bin"
 
 setopt NO_BG_NICE   # don't lower priority of background jobs
 setopt NO_LIST_BEEP # don't beep on tab completion
@@ -90,3 +91,5 @@ alias less="less -R -N"
 alias open="nautilus"
 alias ls="eza"
 alias l="eza -laah"
+
+. "$HOME/.cargo/env"
