@@ -51,7 +51,7 @@ compinit
 # named directories
 hash -d ghub="$HOME/Github"
 hash -d ssh="$HOME/.ssh"
-hash -d config="$HOME/.config"s
+hash -d config="$HOME/.config"
 
 # aliases
 alias xclip="xclip -sel clip"
