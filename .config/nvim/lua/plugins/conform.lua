@@ -35,7 +35,7 @@ return {
       lua = { "stylua" },
       rust = { "rustfmt" },
       go = { "goimports", "gofmt" },
-      python = { "isort", "black" },
+      python = { "isort", "ruff" },
       javascript = { "prettier" },
       sh = { "shfmt" },
       zsh = { "shfmt" },
