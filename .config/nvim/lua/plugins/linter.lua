@@ -9,6 +9,7 @@ return {
         markdown = { "vale" },
         go = { "golangci-lint" },
         sh = { "shellcheck" },
+        rust = { "cargo" },
       },
     },
     config = function(_, opts)
