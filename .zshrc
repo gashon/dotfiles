@@ -96,3 +96,5 @@ alias less="less -R -N"
 alias open="nautilus"
 alias ls="eza"
 alias l="eza -laah"
+
+. "$HOME/.cargo/env"

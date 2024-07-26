@@ -39,6 +39,7 @@ return {
       javascript = { "prettier" },
       sh = { "shfmt" },
       zsh = { "shfmt" },
+      json = { "prettier" },
     },
     -- Customize formatters
     formatters = {},
