@@ -25,17 +25,8 @@ keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse fi
 keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" }) -- refresh file explorer
 
 -- lsp (mason)
--- Buffer local mappings.
--- See `:help vim.lsp.*` for documentation on any of the below functions
-local opts = { buffer = 1, silent = true }
-keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-keymap.set("n", "K", vim.lsp.buf.hover, opts)
-keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
--- vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-keymap.set("n", "<C-k>", vim.lsp.buf.type_definition, opts)
-keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
-keymap.set("n", "gr", vim.lsp.buf.references, opts)
+-- See lua/plugins/lsp.lua for the mappings
+-- See `:help vim.lsp.*` for additional documentation
 
 -- Noice
 -- add kepmap to dismiss the noice popup
