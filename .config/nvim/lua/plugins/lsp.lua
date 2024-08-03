@@ -15,6 +15,7 @@ return {
       "clangd",
       "gopls",
       "lua_ls",
+      "yamlls",
     },
     automatic_installation = true,
   },
@@ -65,10 +66,24 @@ return {
       end,
     })
 
-    lspconfig.rust_analyzer.setup({ on_attach = on_attach })
+    lspconfig.rust_analyzer.setup({
+      on_attach = on_attach,
+      settings = {
+        ["rust-analyzer"] = {
+          cargo = {
+            allFeatures = true,
+          },
+          checkOnSave = {
+            allFeatures = true,
+            command = "clippy",
+          },
+        },
+      },
+    })
     lspconfig.tsserver.setup({ on_attach = on_attach })
     lspconfig.gopls.setup({ on_attach = on_attach })
     lspconfig.clangd.setup({ on_attach = on_attach })
     lspconfig.lua_ls.setup({ on_attach = on_attach })
+    lspconfig.yamlls.setup({ on_attach = on_attach })
   end,
 }

@@ -9,7 +9,8 @@ return {
         markdown = { "vale" },
         go = { "golangci-lint" },
         sh = { "shellcheck" },
-        rust = { "rust-clippy" },
+        -- rust linter is attached to rust-analyzer in lsp.lua
+        -- rust = { "clippy" },
       },
     },
     config = function(_, opts)
