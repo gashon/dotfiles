@@ -84,6 +84,18 @@ return {
     lspconfig.gopls.setup({ on_attach = on_attach })
     lspconfig.clangd.setup({ on_attach = on_attach })
     lspconfig.lua_ls.setup({ on_attach = on_attach })
-    lspconfig.yamlls.setup({ on_attach = on_attach })
+    lspconfig.yamlls.setup({
+      on_attach = on_attach,
+      settings = {
+        yaml = {
+          format = { enable = true },
+          validate = true,
+          schemas = {
+            kubernetes = "/*.yaml",
+            ["http://json.schemastore.org/kustomization"] = "/kustomization.yaml",
+          },
+        },
+      },
+    })
   end,
 }
