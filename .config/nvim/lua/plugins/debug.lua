@@ -9,6 +9,8 @@ return {
     "jay-babu/mason-nvim-dap.nvim",
     "leoluz/nvim-dap-go",
   },
+  event = "BufReadPre",
+  lazy = true,
   config = function()
     local dap = require("dap")
     local dapui = require("dapui")
