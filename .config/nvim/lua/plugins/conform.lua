@@ -37,6 +37,8 @@ return {
       go = { "goimports", "gofmt" },
       python = { "isort", "ruff" },
       javascript = { "prettier" },
+      typescript = { "prettier" },
+      typescriptreact = { "prettier" },
       sh = { "shfmt" },
       zsh = { "shfmt" },
       json = { "prettier" },
