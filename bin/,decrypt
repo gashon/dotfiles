@@ -7,8 +7,8 @@ file=$1
 
 echo -e "\nkey_id: $key_id\ntarget: $file\n"
 
-without_extension=$(echo "$file" | cut -d'.' -f1)
-rest_of_file=$(echo "$file" | cut -d'.' -f2- | sed 's/\.gpg//')
-output_file="${without_extension}.decrypted.${rest_of_file}"
+# format: filename.decrypted.ext
+output_file=$(rg "(.*?)\.(.*)" -or '$1.decrypted.$2' <<<"$file") || "$file.decrypted"
+output_file=$(sed 's/\.gpg$//' <<<"$output_file")
 
 gpg --decrypt --recipient "$key_id" --output "${output_file}" "$file"
