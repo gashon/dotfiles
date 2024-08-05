@@ -1,0 +1,5 @@
+#!/bin/bash
+
+unset GPG_TTY
+
+gpg-connect-agent killagent /bye

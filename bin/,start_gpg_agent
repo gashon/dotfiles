@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 export GPG_TTY=$(tty)
 
 gpg-connect-agent reloadagent /bye
