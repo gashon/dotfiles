@@ -20,7 +20,7 @@ for d in $config_dots; do
 	dir_name=$(basename "$d")
 
 	echo "symlinking $(pwd)/$d to ~/.config/$dir_name"
-	ln -s "$(pwd)" ~/.config/"$dir_name"
+	ln -s "$(pwd)"/.config/"$dir_name" ~/.config/"$dir_name"
 done
 
 echo "symlinking $(pwd)/bin to ~/.local/bin"
