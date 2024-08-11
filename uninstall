@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# This script removes symlinks created by the dotfiles setup script
+
+if [ "$(basename "$(pwd)")" != "dotfiles" ]; then
+    echo "Please run this script in the dotfiles directory"
+    exit 1
+fi
+
+# Remove symlinks for dotfiles in home directory
+home_dots=$(find . -name ".*" -type f -maxdepth 1 -exec basename {} \; | grep -v ".git")
+
+for f in $home_dots; do
+    if [ -L ~/"$f" ]; then
+        echo "Removing symlink ~/$f"
+        rm ~/"$f"
+    else
+        echo "~/$f is not a symlink, skipping"
+    fi
+done
+
+# Remove symlinks for config directories
+config_dots=("kitty" "nvim")
+
+for d in "${config_dots[@]}"; do
+    if [ -L ~/.config/"$d" ]; then
+        echo "Removing symlink ~/.config/$d"
+        rm ~/.config/"$d"
+    else
+        echo "~/.config/$d is not a symlink, skipping"
+    fi
+done
+
+# Remove symlink for bin directory
+if [ -L ~/.local/bin ]; then
+    echo "Removing symlink ~/.local/bin"
+    rm ~/.local/bin
+else
+    echo "~/.local/bin is not a symlink, skipping"
+fi
+
+echo "Symlink removal complete"
