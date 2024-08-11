@@ -50,7 +50,7 @@ autoload -Uz compinit
 compinit
 
 # named directories
-hash -d ghub="$HOME/Github"
+hash -d ghub="$HOME/Documents/github"
 hash -d ssh="$HOME/.ssh"
 hash -d config="$HOME/.config"
 

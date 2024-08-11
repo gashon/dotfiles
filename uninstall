@@ -39,4 +39,3 @@ else
     echo "~/.local/bin is not a symlink, skipping"
 fi
 
-echo "Symlink removal complete"

@@ -7,7 +7,7 @@ if [ "$(basename "$(pwd)")" != "dotfiles" ]; then
 	exit 1
 fi
 
-home_dots=$(find . -name ".*" -type f -maxdepth 1 -exec basename {} \; | grep -v ".git")
+home_dots=$(find . -name ".*" -type f -maxdepth 1 -exec basename {} \;)
 
 # list of directories belonging in .config
 config_dots=("kitty nvim")
@@ -27,6 +27,9 @@ done
 
 for d in $config_dots; do
 	echo "symlinking $(pwd)/$d to ~/.config/$d"
+	if [ -d ~/.config/"$d" ]; then
+		rm -r ~/.config/"$d"
+	fi
 	ln -s "$(pwd)"/"$d" ~/.config/"$d"
 done
 
