@@ -7,9 +7,18 @@ if [ "$(basename "$(pwd)")" != "dotfiles" ]; then
 	exit 1
 fi
 
-home_dots=$(find . -name ".*" -type f -maxdepth 1)
+home_dots=$(find . -name ".*" -type f -maxdepth 1 -exec basename {} \; | grep -v ".git")
 
-config_dots=$(find .config -maxdepth 1 -mindepth 1)
+# list of directories belonging in .config
+config_dots=("kitty nvim")
+
+# assert that all directories in config_dots exist
+for d in $config_dots; do
+	if [ ! -d "$d" ]; then
+		echo "Directory $d does not exist"
+		exit 1
+	fi
+done
 
 for f in $home_dots; do
 	echo "symlinking $(pwd)/$f to ~/$f"
@@ -17,10 +26,8 @@ for f in $home_dots; do
 done
 
 for d in $config_dots; do
-	dir_name=$(basename "$d")
-
-	echo "symlinking $(pwd)/$d to ~/.config/$dir_name"
-	ln -s "$(pwd)"/.config/"$dir_name" ~/.config/"$dir_name"
+	echo "symlinking $(pwd)/$d to ~/.config/$d"
+	ln -s "$(pwd)"/"$d" ~/.config/"$d"
 done
 
 echo "symlinking $(pwd)/bin to ~/.local/bin"
