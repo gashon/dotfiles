@@ -1,5 +1,5 @@
 return {
-  "github/copilot.vim",
+  "zbirenbaum/copilot.lua",
   event = "BufRead",
   enabled = "true",
   config = function()
