@@ -104,7 +104,7 @@ alias open="nautilus"
 alias ls="eza"
 alias l="eza -laah"
 
-. "$HOME/.cargo/env"
+[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
 # To customize prompt, run `p10k configure` or edit ~/Documents/github/dotfiles/.p10k.zsh.
 [[ ! -f ~/Documents/github/dotfiles/.p10k.zsh ]] || source ~/Documents/github/dotfiles/.p10k.zsh
