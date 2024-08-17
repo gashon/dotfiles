@@ -20,7 +20,7 @@ for f in $home_dots; do
 done
 
 # Remove symlinks for config directories
-config_dots=("kitty" "nvim" "yay")
+config_dots=("kitty" "nvim" "yay" "dunst")
 
 for d in "${config_dots[@]}"; do
 	if [ -L ~/.config/"$d" ]; then
