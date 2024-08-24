@@ -20,11 +20,13 @@ for d in $config_dots; do
 	fi
 done
 
+# home dotfiles
 for f in $home_dots; do
 	echo "symlinking $(pwd)/$f to ~/$f"
 	ln -s "$(pwd)/$f" ~/"$f"
 done
 
+# .configs
 for d in $config_dots; do
 	echo "symlinking $(pwd)/$d to ~/.config/$d"
 	if [ -d ~/.config/"$d" ]; then
@@ -33,5 +35,19 @@ for d in $config_dots; do
 	ln -s "$(pwd)"/"$d" ~/.config/"$d"
 done
 
+# bins
 echo "symlinking $(pwd)/bin to ~/.local/bin"
 ln -s "$(pwd)/bin" ~/.local
+
+##### SUDO LINKS REQUIRED PAST THIS POINT #####
+if [ "$EUID" -ne 0 ]; then
+	echo "Please run this script as root to symlink btrbk"
+	exit 1
+fi
+
+# btrbk config
+echo "symlinking $(pwd)/btrbk/btrbk.conf to /etc/btrbk.conf"
+ln -s "$(pwd)/btrbk/btrbk.conf" /etc/btrbk.conf
+
+echo "symlinking $(pwd)/btrbk/btrbk.external.conf to /etc/btrbk.external.conf"
+ln -s "$(pwd)/btrbk/btrbk.external.conf" /etc/btrbk.external.conf
