@@ -1,0 +1,13 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Creating Snapper pre and post snapshots for pacman transactions
+Depends = snapper
+When = PreTransaction
+Exec = /usr/bin/btrbk -c /etc/btrbk/btrbk.conf run
+AbortOnFail
