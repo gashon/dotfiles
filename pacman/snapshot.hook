@@ -7,7 +7,7 @@ Target = *
 
 [Action]
 Description = Creating Snapper pre and post snapshots for pacman transactions
-Depends = snapper
+Depends = btrbk
 When = PreTransaction
 Exec = /usr/bin/btrbk -c /etc/btrbk/btrbk.conf run
 AbortOnFail
