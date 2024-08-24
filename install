@@ -41,16 +41,20 @@ ln -s "$(pwd)/bin" ~/.local
 
 ##### SUDO LINKS REQUIRED PAST THIS POINT #####
 if [ "$EUID" -ne 0 ]; then
-	echo "Please run this script as root to symlink btrbk and pacman snapshot hooks"
+	echo ""
+	echo ""
+	echo -e "\tPlease run this script as root to symlink btrbk and pacman snapshot hooks"
+	echo ""
+	echo ""
 	exit 1
 fi
 
 # btrbk config
 echo "symlinking $(pwd)/btrbk/btrbk.conf to /etc/btrbk.conf"
-ln -s "$(pwd)/btrbk/btrbk.conf" /etc/btrbk.conf
+ln -s "$(pwd)/btrbk/btrbk.conf" /etc/btrbk/btrbk.conf
 
 echo "symlinking $(pwd)/btrbk/btrbk.external.conf to /etc/btrbk.external.conf"
-ln -s "$(pwd)/btrbk/btrbk.external.conf" /etc/btrbk.external.conf
+ln -s "$(pwd)/btrbk/btrbk.external.conf" /etc/btrbk/btrbk.external.conf
 
 # pacman hooks
 echo "symlinking $(pwd)/pacman to /etc/pacman.d/hooks"
