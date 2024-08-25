@@ -10,4 +10,4 @@ subject="Anacron Job"
 body="$(cat)"
 
 su - "$MAILTO" -c "echo -e \"[$(date)] $subject\n$body\n\" >> \"/var/spool/mail/$MAILTO\""
-su - "$MAILTO" -c "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u ${MAILTO})/bus notify-send \"${subject}\" \"(/var/spool/mail/$MAILTO) ${body}\"" | tee -a /tmp/tmp.log
+su - "$MAILTO" -c "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u ${MAILTO})/bus notify-send \"${subject}\" \"(/var/spool/mail/$MAILTO) ${body}\""
