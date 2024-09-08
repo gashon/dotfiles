@@ -11,7 +11,7 @@ return {
     ensure_installed = {
       "rust_analyzer",
       "pyright",
-      "ts_ls",
+      "tsserver",
       "clangd",
       "gopls",
       "lua_ls",
@@ -80,7 +80,7 @@ return {
         },
       },
     })
-    lspconfig.ts_ls.setup({ on_attach = on_attach })
+    lspconfig.tsserver.setup({ on_attach = on_attach })
     lspconfig.gopls.setup({ on_attach = on_attach })
     lspconfig.clangd.setup({ on_attach = on_attach })
     lspconfig.lua_ls.setup({ on_attach = on_attach })
