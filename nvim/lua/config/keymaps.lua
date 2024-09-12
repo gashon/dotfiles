@@ -2,7 +2,7 @@ local keymap = vim.keymap
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
-keymap.set("n", "<leader>sh", "<C-x>", { desc = "Split window horizontall" })
+keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontall" })
 
 -- tab management
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
