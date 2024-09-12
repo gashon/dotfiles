@@ -4,6 +4,7 @@
 
 [core]
     editor = vim
+    pager = delta
 
 [push]
     default = simple
@@ -12,10 +13,10 @@
     prune = false
 
 [diff]
-    tool = vimdiff 
+    colorMoved = default
 
 [merge]
-    tool = vimdiff  
+    conflictstyle = diff3
     ff = only
 
 [rerere]
@@ -41,6 +42,7 @@
 [delta]
     features = zebra
     syntax-theme = Monokai
+    navigate = true    # use n and N to move between diff sections
 
 [init]
     defaultBranch = main
