@@ -32,3 +32,6 @@ vim.opt.clipboard = "unnamedplus" -- copy/paste to system clipboard
 
 vim.g.nvim_tree_lsp_diagnostics = 1 -- show lsp diagnostics in nvim-tree
 vim.g.nvim_tree_git_hl = 1 -- show git status in nvim-tree
+
+-- required for obsidian.nvim (https://github.com/epwalsh/obsidian.nvim/issues/286)
+vim.opt.conceallevel = 1

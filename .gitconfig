@@ -40,7 +40,6 @@
     diffFilter = delta --color-only
 
 [delta]
-    ; features = zebra
     syntax-theme = Monokai
     navigate = true    # use n and N to move between diff sections
 
