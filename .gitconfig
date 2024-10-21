@@ -31,6 +31,7 @@
 # configure gpgSigning and key for signing commits
 [include]
     path = ~/.gitconfig_local
+    path = ~/.gitconfig.delta
 
 [mergetool "vimdiff"]
     cmd = vimdiff "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
@@ -38,10 +39,6 @@
 
 [interactive]
     diffFilter = delta --color-only
-
-[delta]
-    syntax-theme = woolly-mammoth
-    navigate = true    # use n and N to move between diff sections
 
 [init]
     defaultBranch = main
