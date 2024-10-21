@@ -40,7 +40,7 @@
     diffFilter = delta --color-only
 
 [delta]
-    syntax-theme = Monokai
+    syntax-theme = woolly-mammoth
     navigate = true    # use n and N to move between diff sections
 
 [init]
