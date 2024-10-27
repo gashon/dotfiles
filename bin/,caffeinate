@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+    echo "Usage: caffeinate COMMAND [ARGS...]"
+    echo "       caffeinate -p PID"
+    exit 1
+fi
+
+if [ "$1" = "-p" ]; then
+    # Monitor specific PID
+    systemd-inhibit --what=idle:sleep --who="$USER" --why="Process $2 running" --mode=block kill -0 "$2"
+else
+    # Run command and prevent sleep until it completes
+    systemd-inhibit --what=idle:sleep --who="$USER" --why="Running $*" --mode=block "$@"
+fi
+
