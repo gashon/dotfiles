@@ -30,7 +30,7 @@ keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file
 
 -- Noice
 -- add kepmap to dismiss the noice popup
-keymap.set("n", "<C-d>", "<cmd>Noice dismiss<cr>", { noremap = true, silent = true })
+keymap.set("n", "<C-s>", "<cmd>Noice dismiss<cr>", { noremap = true, silent = true })
 
 --UndoTree
 keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>", { noremap = true, silent = true })
