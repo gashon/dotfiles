@@ -108,5 +108,3 @@ alias l="eza -laah"
 
 # To customize prompt, run `p10k configure` or edit ~/Documents/github/dotfiles/.p10k.zsh.
 [[ ! -f ~/Documents/github/dotfiles/.p10k.zsh ]] || source ~/Documents/github/dotfiles/.p10k.zsh
-
-export PATH="$PATH:/home/gashon/Documents/github/screenpipe/target/debug"
