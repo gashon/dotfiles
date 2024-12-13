@@ -107,8 +107,9 @@ alias l="eza -laah"
 ## BEGIN TTT CONFIGS
 alias jamie='sshpass -f /home/gashon/.ssh/pass/jamie ssh jamie'
 
-# ssh to slurm cluster - jump through jamie
+# ssh to cluster - jump through jamie
 alias sc='sshpass -f /home/gashon/.ssh/pass/jamie ssh -o ProxyCommand="sshpass -f /home/gashon/.ssh/pass/jamie ssh -W %h:%p jamie" sc'
+alias sphinx='sshpass -f /home/gashon/.ssh/pass/jamie ssh -o ProxyCommand="sshpass -f /home/gashon/.ssh/pass/jamie ssh -W %h:%p jamie" yusun@sphinx9.stanford.edu'
 
 ## END TTT CONFIGS
 
