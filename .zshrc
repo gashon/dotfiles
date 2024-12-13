@@ -104,6 +104,14 @@ alias open="nautilus"
 alias ls="eza"
 alias l="eza -laah"
 
+## BEGIN TTT CONFIGS
+alias jamie='sshpass -f /home/gashon/.ssh/pass/jamie ssh jamie'
+
+# ssh to slurm cluster - jump through jamie
+alias sc='sshpass -f /home/gashon/.ssh/pass/jamie ssh -o ProxyCommand="sshpass -f /home/gashon/.ssh/pass/jamie ssh -W %h:%p jamie" sc'
+
+## END TTT CONFIGS
+
 [[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
 # To customize prompt, run `p10k configure` or edit ~/Documents/github/dotfiles/.p10k.zsh.
