@@ -111,6 +111,8 @@ alias jamie='sshpass -f /home/gashon/.ssh/pass/jamie ssh jamie'
 alias sc='sshpass -f /home/gashon/.ssh/pass/jamie ssh -o ProxyCommand="sshpass -f /home/gashon/.ssh/pass/jamie ssh -W %h:%p jamie" sc'
 alias sphinx='sshpass -f /home/gashon/.ssh/pass/jamie ssh -o ProxyCommand="sshpass -f /home/gashon/.ssh/pass/jamie ssh -W %h:%p jamie" yusun@sphinx9.stanford.edu'
 
+alias mnt_sphinx='sshfs -o ssh_command="sshpass -f /home/gashon/.ssh/pass/jamie ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" -o ProxyCommand="sshpass -f /home/gashon/.ssh/pass/jamie ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null jamie -W %h:%p" yusun@sphinx9.stanford.edu:/scr-ssd/yusun/gashon /mnt/ttt && cd /mnt/ttt'
+
 ## END TTT CONFIGS
 
 [[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
