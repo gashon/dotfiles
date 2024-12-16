@@ -26,7 +26,7 @@ return {
       return {
         timeout_ms = 500,
         lsp_fallback = true,
-        async = false,
+        async = true,
         quiet = false,
       }
     end,
