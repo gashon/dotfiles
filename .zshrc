@@ -100,7 +100,7 @@ bindkey -v
 # aliases
 alias xclip="xclip -sel clip"
 alias less="less -R -N"
-alias open="nautilus"
+alias open="ranger"
 alias ls="eza"
 alias l="eza -laah"
 
