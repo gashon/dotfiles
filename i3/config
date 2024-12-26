@@ -200,3 +200,7 @@ exec --no-startup-id xinput set-prop 10 "libinput Natural Scrolling Enabled" 1
 
 # increase cursor speed
 exec --no-startup-id xinput set-prop 10 "libinput Accel Speed" 0.7
+
+# start picom
+exec --no-startup-id picom
+
