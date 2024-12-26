@@ -103,7 +103,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # Use rofi to show open windows
-bindsym $mod+Tab exec rofi -show window
+bindsym $mod+Tab exec rofi -show window -selected-row 1
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
