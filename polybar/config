@@ -1,0 +1,25 @@
+
+[colors]
+background = #BCC3C3
+background-alt = #002B36
+foreground = #002B36
+foreground-alt = #BCC3C3
+primary = #ffb52a
+secondary = #e60053
+alert = #FF0000
+
+[bar/example]
+width = 100%
+height = 30
+background = #222222
+foreground = #ffffff
+
+modules-left = i3
+modules-center = date
+modules-right = cpu memory
+
+module/i3 = i3
+module/date = custom/date
+module/cpu = cpu
+module/memory = memory
+
