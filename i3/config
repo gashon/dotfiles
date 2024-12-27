@@ -210,5 +210,10 @@ exec --no-startup-id xinput set-prop 10 "libinput Accel Speed" 0.7
 # start picom
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
+exec --no-startup-id flameshot
+bindsym Print exec flameshot gui
+
+for_window [class="Nautilus"] floating enable, resize set 800 600, move position 100 100
+
 gaps inner 5
 gaps outer 5
