@@ -1,131 +1,72 @@
+# Enhanced Dunst Configuration for a More Aesthetic Notification Experience
 
 [global]
     ### Display ###
 
-    # Monitor settings remain unchanged
     monitor = 0
     follow = none
 
     ### Geometry ###
 
-    # Width for better readability
     width = 400
-
-    # Height to accommodate more content if needed
     height = 300
-
-    # Positioned in the top-right corner for easy visibility
     origin = top-right
-
-    # Subtle offset for better placement
     offset = 10x50
-
-    # Auto-detect scale factor for better scaling across different displays
     scale = 0
-
-    # Increased notification limit for higher capacity
     notification_limit = 20
 
     ### Progress Bar ###
 
-    # Enabled progress bar for tasks with progress updates
     progress_bar = true
     progress_bar_height = 10
     progress_bar_frame_width = 1
     progress_bar_min_width = 150
     progress_bar_max_width = 300
-    progress_bar_corner_radius = 5  # Added rounded corners
+    progress_bar_corner_radius = 5
     progress_bar_corners = all
 
-    # Rounded corners for icons
     icon_corner_radius = 5
     icon_corners = all
 
-    # Indicate hidden messages with a subtle count
     indicate_hidden = yes
-
-    # Added slight transparency for a modern look
-    transparency = 10  # Range: 0 (opaque) to 100 (fully transparent)
-
-    # Reduced separator height for a cleaner look
+    transparency = 10
     separator_height = 1
-
-    # Enhanced padding for better spacing
     padding = 10
     horizontal_padding = 10
     text_icon_padding = 10
-
-    # Thinner frame with a more subtle color
     frame_width = 2
     frame_color = "#444444"
-
-    # Added gap between notifications for better separation
     gap_size = 10
-
-    # Defined a soft separator color
     separator_color = "#555555"
-
-    # Sorting by urgency descending for critical notifications to appear first
     sort = urgency_descending
 
     ### Text ###
 
-    # Changed to a more modern sans-serif font
     font = "Fira Sans 10"
-
-    # Changed line_height to an integer value
     line_height = 12
-
-    # Enabled full markup for richer text formatting
     markup = full
-
-    # Updated format with icons and better text styling
-
-    # Centered alignment for a balanced look
     alignment = center
-
-    # Vertically centered text and icons
     vertical_alignment = center
-
-    # Show age threshold slightly increased
     show_age_threshold = 30
-
-    # Ellipsize at the end for natural truncation
     ellipsize = end
-
-    # Enabled word wrapping for long texts
     ignore_newline = no
-
-    # Stack duplicates with a subtle count
     stack_duplicates = true
     hide_duplicate_count = false
-
-    # Display indicators for URLs and actions with icons
     show_indicators = yes
 
     ### Icons ###
 
-    # Enabled recursive icon lookup for better icon management
     enable_recursive_icon_lookup = true
-
-    # Set to a popular icon theme; install Papirus or switch to another theme
-    icon_theme = "Adwaita"  # Change to "Adwaita" or another theme if Papirus is not installed
-
-    # Positioned icons to the left for consistency
+    icon_theme = "Papirus"  # Change to "Adwaita" or another theme if Papirus is not installed
     icon_position = left
-
-    # Adjusted icon sizes for better visibility
     min_icon_size = 32
     max_icon_size = 64
-
-    # Updated icon paths to match the new icon theme
     icon_path = /usr/share/icons/Papirus/64x64/apps/:/usr/share/icons/Papirus/64x64/devices/
     # If not using Papirus, adjust accordingly:
     # icon_path = /usr/share/icons/Adwaita/64x64/apps/:/usr/share/icons/Adwaita/64x64/devices/
 
     ### History ###
 
-    # Enabled sticky history for quick access to recent notifications
     sticky_history = yes
     history_length = 20
 
@@ -134,37 +75,25 @@
     # Corrected dmenu command with proper quoting
     dmenu = '/usr/bin/dmenu -i -p "Dunst:" -nb "#282c34" -nf "#ffffff" -sb "#61afef" -sf "#ffffff"'
 
-    # Using xdg-open for browser remains unchanged
     browser = /usr/bin/xdg-open
-
-    # Always run scripts for additional functionality
     always_run_script = true
-
-    # Window title and class remain the same
     title = Dunst
     class = Dunst
-
-    # Added rounded corners to the notification window
     corner_radius = 10
     corners = all
-
-    # Enabled DBus close notification for better control
     ignore_dbusclose = false
 
     ### Wayland ###
-    # These settings are Wayland-specific and remain unchanged
-
-    # layer = top
     force_xwayland = false
 
     ### Legacy ###
-    # Legacy settings remain unchanged
     force_xinerama = false
 
     ### Mouse ###
 
-    # Enhanced mouse interactions for better usability
-    mouse_left_click = context
+    # Updated mouse interactions to ensure notifications can be dismissed
+    mouse_left_click = close_current  # Option 1: Only close
+    # mouse_left_click = context, close_current  # Option 2: Open context and close
     mouse_middle_click = do_action, close_current
     mouse_right_click = context_all
 
