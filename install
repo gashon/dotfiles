@@ -10,7 +10,7 @@ fi
 home_dots=$(find . -name ".*" -type f -maxdepth 1 -exec basename {} \;)
 
 # list of directories belonging in .config
-config_dots=("kitty nvim yay dunst picom i3 i3status rofi")
+config_dots=("kitty nvim yay dunst polybar ranger picom i3 i3status rofi")
 
 # assert that all directories in config_dots exist
 for d in $config_dots; do
