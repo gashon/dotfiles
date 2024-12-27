@@ -19,8 +19,11 @@ for THRESHOLD in "${THRESHOLDS[@]}"; do
 
 	if [[ "$BATTERY_LEVEL" -le "$THRESHOLD" && "$BATTERY_STATUS" == "Discharging" ]]; then
 		if [[ ! -f "$STATE_FILE" ]]; then
-			# Send notification if not already sent for this threshold
-			notify-send -u normal "Low Battery" "Battery level is at $BATTERY_LEVEL%. Please plug in your charger."
+			if [[ "$THRESHOLD" -ge 20 ]]; then
+				notify-send -u normal "Low Battery" "Battery level is at $BATTERY_LEVEL%. Please plug in your charger."
+			else
+				notify-send -u critical "Low Battery" "Battery level is at $BATTERY_LEVEL%. Please plug in your charger."
+			fi
 			touch "$STATE_FILE"
 		fi
 	else
