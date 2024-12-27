@@ -12,6 +12,8 @@ return {
     opts = {
       theme = "doom",
       preview = {
+        -- EXAMPLE: chafa --relative on --passthrough tmux -f kitty -s 60x60 -c full --fg-only --symbols braille --clear ~/.config/nvim/static/braille.gif
+
         -- command = "chafa --relative on --passthrough tmux -f kitty -s 60x60 -c full --fg-only --symbols braille --clear",
         -- file_path = '$(ls ' .. home .. '/.config/nvim/static/*.gif | sort -R)',
         -- file_path = os.getenv("HOME") .. "/.config/nvim/static/dashboard.webp",
