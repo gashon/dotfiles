@@ -210,8 +210,5 @@ exec --no-startup-id xinput set-prop 10 "libinput Accel Speed" 0.7
 # start picom
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
-# setup dunst notifications
-exec --no-startup-id env DISPLAY=:0 dunst
-
 gaps inner 5
 gaps outer 5
