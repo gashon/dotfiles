@@ -209,6 +209,9 @@ bindsym Print exec flameshot gui
 
 for_window [class="Nautilus"] floating enable, resize set 800 600, move position 100 100
 
+# set background
+exec --no-startup-id feh --bg-scale /home/gashon/Documents/github/dotfiles/kitty/old_bgs/bg4.png
+
 # audio keybindings
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
