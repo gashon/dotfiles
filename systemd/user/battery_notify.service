@@ -1,0 +1,13 @@
+[Unit]
+Description=Battery Notification Timer
+
+[Service]
+ExecStart=/bin/bash /home/gashon/Documents/github/dotfiles/systemd/scripts/battery_notify.sh
+
+[Timer]
+OnUnitActiveSec=1m
+Unit=battery_notify.service
+
+[Install]
+WantedBy=timers.target
+
