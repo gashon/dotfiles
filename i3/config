@@ -218,8 +218,11 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id \
   ~/.config/i3/scripts/volume.sh +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id \
   ~/.config/i3/scripts/volume.sh -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && /home/gashon/Documents/github/dotfiles/systemd/scripts/mute_led_control.sh
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle 
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# open bluetuith
+bindsym $mod+b exec kitty -e bluetuith
 
 gaps inner 5
 gaps outer 5
