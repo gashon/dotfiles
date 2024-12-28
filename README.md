@@ -1,4 +1,3 @@
-## Startup
 ![theme](https://github.com/user-attachments/assets/e66df2b2-fc69-4bcf-8b34-1f78e51486d0)
 
 ## Nvim
