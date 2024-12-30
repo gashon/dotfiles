@@ -1,0 +1,13 @@
+[Unit]
+Description=Lock the screen on suspend
+Before=sleep.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/i3lock -c 000000
+TimeoutSec=0
+RemainAfterExit=yes
+
+[Install]
+WantedBy=sleep.target
+
