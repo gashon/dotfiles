@@ -52,7 +52,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
+# start rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym Super_L exec --no-startup-id rofi -show drun
 
@@ -101,8 +101,10 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
+exec_always --no-startup-id uv run --with i3ipc ~/Documents/github/dotfiles/i3/scripts/i3-lru-daemon
+bindsym $mod+Tab exec --no-startup-id ~/Documents/github/dotfiles/i3/scripts/i3-lru
 # Use rofi to show open windows
-bindsym $mod+Tab exec rofi -show window -selected-row 1
+# bindsym $mod+Tab exec rofi -show window -selected-row 1
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
