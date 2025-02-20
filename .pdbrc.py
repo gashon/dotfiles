@@ -79,6 +79,12 @@ def compare(hw_path="/tmp/hw", ref_path="/tmp/ref"):
     print(f"{median_diff=}")
 
 
+def replicate(tensor):
+    return tensor.redistribute(
+        placements=[torch.distributed.tensor.placement_types.Replicate()]
+    )
+
+
 def _hash(x):
     if use_torch:
         data = x.cpu().to(dtype=torch.float32).numpy()
