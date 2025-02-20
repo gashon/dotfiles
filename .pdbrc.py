@@ -48,6 +48,34 @@ def compare_tensors(grad_hw, grad_ref):
     return max_diff, median_diff, median_relative_error
 
 
+def hw(tensor):
+    if use_torch:
+        torch.save(tensor, "/tmp/hw")
+    else:
+        raise NotImplementedError("Only PyTorch tensors are supported")
+
+
+def ref(tensor):
+    if use_torch:
+        torch.save(tensor, "/tmp/ref")
+    else:
+        raise NotImplementedError("Only PyTorch tensors are supported")
+
+
+def compare(script_path: str):
+    import subprocess
+    import sys
+
+    result = subprocess.run(
+        [sys.executable, script_path],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        universal_newlines=True,
+    )
+
+    print(result.stdout)
+
+
 def _hash(x):
     if use_torch:
         data = x.cpu().to(dtype=torch.float32).numpy()
