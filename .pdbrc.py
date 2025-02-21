@@ -24,11 +24,6 @@ def ref(tensor):
         raise NotImplementedError("Only PyTorch tensors are supported")
 
 
-def compare_tensors(grad_hw, grad_ref):
-    if not use_torch:
-        raise NotImplementedError("Only PyTorch tensors are supported")
-
-
 def compare(hw_path="/tmp/hw", ref_path="/tmp/ref"):
     if not use_torch:
         raise NotImplementedError("Only PyTorch tensors are supported")
@@ -80,8 +75,9 @@ def compare(hw_path="/tmp/hw", ref_path="/tmp/ref"):
 
 
 def replicate(tensor):
+    ndim = len(tensor.device_mesh.mesh_dim_names)
     return tensor.redistribute(
-        placements=[torch.distributed.tensor.placement_types.Replicate()]
+        placements=[torch.distributed.tensor.placement_types.Replicate()] * ndim
     )
 
 
