@@ -81,6 +81,19 @@ def hw_in_ref():
     hw = torch.load("/tmp/hw")
     ref = torch.load("/tmp/ref")
 
+    def convert_to_tensor(x):
+        if isinstance(x, torch.Tensor):
+            return x
+        elif isinstance(x, np.ndarray):
+            return torch.from_numpy(x)
+        elif isinstance(x, list):
+            return torch.tensor(x)
+        else:
+            raise ValueError(f"Unsupported type: {type(x)}")
+
+    hw = convert_to_tensor(hw)
+    ref = convert_to_tensor(ref)
+
     hw_is_subset = torch.isin(hw, ref).all().item()
 
     print(f"{hw_is_subset=}")
