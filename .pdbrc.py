@@ -30,32 +30,32 @@ def compare(hw_path="/tmp/hw", ref_path="/tmp/ref"):
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
-    grad_hw = torch.load(f"{hw_path}", map_location="cpu").to(device)
-    grad_ref = torch.load(f"{ref_path}", map_location="cpu").to(device)
+    hw = torch.load(f"{hw_path}", map_location="cpu").to(device)
+    ref = torch.load(f"{ref_path}", map_location="cpu").to(device)
 
     print()
-    print(f"{grad_hw.device=}")
-    print(f"{grad_ref.device=}")
+    print(f"{hw.device=}")
+    print(f"{ref.device=}")
     print()
 
-    print(f"{grad_hw.dtype=}")
-    print(f"{grad_ref.dtype=}")
+    print(f"{hw.dtype=}")
+    print(f"{ref.dtype=}")
     print()
 
-    print(f"{grad_hw.shape=}")
-    print(f"{grad_ref.shape=}")
+    print(f"{hw.shape=}")
+    print(f"{ref.shape=}")
     print()
 
-    abs_diff = torch.abs(grad_hw - grad_ref)
+    abs_diff = torch.abs(hw - ref)
     max_diff = torch.max(abs_diff).item()
     median_diff = torch.median(abs_diff).item()
 
     # Calculate relative errors, avoiding division by zeroj
     with torch.no_grad():
-        nonzero_mask = grad_ref != 0
-        relative_error = torch.zeros_like(grad_ref)
+        nonzero_mask = ref != 0
+        relative_error = torch.zeros_like(ref)
         relative_error[nonzero_mask] = abs_diff[nonzero_mask] / torch.abs(
-            grad_ref[nonzero_mask]
+            ref[nonzero_mask]
         )
         median_relative_error = (
             torch.median(relative_error[nonzero_mask]).item()
@@ -72,6 +72,18 @@ def compare(hw_path="/tmp/hw", ref_path="/tmp/ref"):
 
     print(f"{max_diff=}")
     print(f"{median_diff=}")
+
+
+def hw_in_ref():
+    if not use_torch:
+        raise NotImplementedError("Only PyTorch tensors are supported")
+
+    hw = torch.load("/tmp/hw")
+    ref = torch.load("/tmp/ref")
+
+    hw_is_subset = torch.isin(hw, ref).all().item()
+
+    print(f"{hw_is_subset=}")
 
 
 def replicate(tensor):
