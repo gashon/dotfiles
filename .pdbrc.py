@@ -106,6 +106,8 @@ def hw_in_ref():
             return torch.from_numpy(x)
         elif isinstance(x, list):
             return torch.tensor(x)
+        elif isinstance(x, torch.distributed.tensor.DTensor):
+            return x.to_local()
         else:
             raise ValueError(f"Unsupported type: {type(x)}")
 
