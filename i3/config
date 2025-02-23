@@ -232,5 +232,7 @@ bindsym XF86Display exec i3lock -c 000000
 # open bluetuith
 bindsym $mod+b exec kitty -e bluetuith
 
+bindsym $mod+XF86Favorites exec nautilus /home/gashon/Pictures/Screenshots
+
 gaps inner 5
 gaps outer 5

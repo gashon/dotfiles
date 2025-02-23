@@ -74,6 +74,24 @@ def compare(hw_path="/tmp/hw", ref_path="/tmp/ref"):
     print(f"{median_diff=}")
 
 
+def get_ref(ref_path="/tmp/ref"):
+    if not use_torch:
+        raise NotImplementedError("Only PyTorch tensors are supported")
+
+    ref = torch.load(ref_path)
+
+    return ref
+
+
+def get_hw(hw_path="/tmp/hw"):
+    if not use_torch:
+        raise NotImplementedError("Only PyTorch tensors are supported")
+
+    hw = torch.load(hw_path)
+
+    return hw
+
+
 def hw_in_ref():
     if not use_torch:
         raise NotImplementedError("Only PyTorch tensors are supported")

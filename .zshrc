@@ -119,3 +119,9 @@ alias mnt_sphinx='sshfs -o ssh_command="sshpass -f /home/gashon/.ssh/pass/jamie 
 
 # To customize prompt, run `p10k configure` or edit ~/Documents/github/dotfiles/.p10k.zsh.
 [[ ! -f ~/Documents/github/dotfiles/.p10k.zsh ]] || source ~/Documents/github/dotfiles/.p10k.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/gashon/google-cloud-sdk/path.zsh.inc' ]; then . '/home/gashon/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/gashon/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/gashon/google-cloud-sdk/completion.zsh.inc'; fi
