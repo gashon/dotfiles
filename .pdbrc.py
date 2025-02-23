@@ -92,12 +92,25 @@ def get_hw(hw_path="/tmp/hw"):
     return hw
 
 
-def hw_in_ref():
+def tree_map(fn, tree):
+    """
+    Recursively apply fn to every leaf node in 'tree'.
+    A 'leaf node' is anything that isn't list, tuple, or dict.
+    """
+    if isinstance(tree, (list, tuple)):
+        return type(tree)(tree_map(fn, x) for x in tree)
+    elif isinstance(tree, dict):
+        return {k: tree_map(fn, v) for k, v in tree.items()}
+    else:
+        return fn(tree)
+
+
+def hw_in_ref(hw_path="/tmp/hw", ref_path="/tmp/ref"):
     if not use_torch:
         raise NotImplementedError("Only PyTorch tensors are supported")
 
-    hw = torch.load("/tmp/hw")
-    ref = torch.load("/tmp/ref")
+    hw = torch.load(hw_path)
+    ref = torch.load(ref_path)
 
     def convert_to_tensor(x):
         if isinstance(x, torch.Tensor):
@@ -111,11 +124,10 @@ def hw_in_ref():
         else:
             raise ValueError(f"Unsupported type: {type(x)}")
 
-    hw = convert_to_tensor(hw)
-    ref = convert_to_tensor(ref)
+    hw = tree_map(convert_to_tensor, hw)
+    ref = tree_map(convert_to_tensor, ref)
 
     hw_is_subset = torch.isin(hw, ref).all().item()
-
     print(f"{hw_is_subset=}")
 
 
