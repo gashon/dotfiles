@@ -131,14 +131,14 @@ def hw_in_ref(hw_path="/tmp/hw", ref_path="/tmp/ref"):
     print(f"{hw_is_subset=}")
 
 
-def replicate(tensor):
+def pdb_replicate(tensor):
     ndim = len(tensor.device_mesh.mesh_dim_names)
     return tensor.redistribute(
         placements=[torch.distributed.tensor.placement_types.Replicate()] * ndim
     )
 
 
-def _hash(x):
+def pdb_hash(x):
     if use_torch:
         data = x.cpu().to(dtype=torch.float32).numpy()
     else:
