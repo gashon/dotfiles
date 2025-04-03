@@ -103,6 +103,7 @@ alias less="less -R -N"
 alias open="ranger"
 alias ls="eza"
 alias l="eza -laah"
+alias rsync="rsync -avz --progress"
 
 ## BEGIN TTT CONFIGS
 alias jamie='sshpass -f /home/gashon/.ssh/pass/jamie ssh jamie'

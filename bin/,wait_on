@@ -5,11 +5,9 @@
 process_name=$1
 
 while true; do
-  if pgrep -x "$process_name" > /dev/null
-  then
-    sleep 1
-  else
-    break
-  fi
+	if pgrep -f "$process_name" >/dev/null; then
+		sleep 1
+	else
+		break
+	fi
 done
-

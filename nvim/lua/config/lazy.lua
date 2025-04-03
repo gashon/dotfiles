@@ -21,7 +21,7 @@ require("lazy").setup({
     lazy = false,
     version = false,
   },
-  checker = { enabled = true },
+  checker = { enabled = false },
 })
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
