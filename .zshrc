@@ -10,7 +10,7 @@
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
 
-[ -z "$TMUX" ] && tmux attach || tmux new-session
+[ -z "$TMUX" ] && tmux attach || tmux new-session 2> /dev/null
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
